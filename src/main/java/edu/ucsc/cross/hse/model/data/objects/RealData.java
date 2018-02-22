@@ -2,6 +2,7 @@ package edu.ucsc.cross.hse.model.data.objects;
 
 import java.util.ArrayList;
 
+import com.be3short.data.cloning.ObjectCloner;
 import com.carrotsearch.sizeof.RamUsageEstimator;
 
 import edu.ucsc.cross.hse.model.data.Data;
@@ -9,6 +10,7 @@ import edu.ucsc.cross.hse.model.data.Data;
 public class RealData implements Data
 {
 
+	private Object id;
 	/**
 	 * File Content Mapping : Stores all file contents
 	 */
@@ -25,7 +27,7 @@ public class RealData implements Data
 	@SafeVarargs
 	public <T> RealData(T... data)
 	{
-
+		id = this.toString();
 		initializeObjectMap();
 		addObject(data);
 	}
@@ -135,6 +137,15 @@ public class RealData implements Data
 	{
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public Data copy()
+	{
+		// TODO Auto-generated method stub
+		RealData data = (RealData) ObjectCloner.xmlClone(this);
+		data.id = id;
+		return data;
 	}
 
 }

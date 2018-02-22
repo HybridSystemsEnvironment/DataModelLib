@@ -2,16 +2,19 @@ package edu.ucsc.cross.hse.model.data.objects;
 
 import java.util.ArrayList;
 
+import com.be3short.data.cloning.ObjectCloner;
+
 import edu.ucsc.cross.hse.model.data.Data;
 
 public class SimulatedData implements Data
 {
 
+	private Object id;
 	private double simulatedSize;
 
 	public SimulatedData(double simulated_size)
 	{
-
+		id = this.toString();
 		simulatedSize = simulated_size;
 	}
 
@@ -41,6 +44,15 @@ public class SimulatedData implements Data
 	{
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public Data copy()
+	{
+		// TODO Auto-generated method stub
+		SimulatedData data = (SimulatedData) ObjectCloner.xmlClone(this);
+		data.id = id;
+		return data;
 	}
 
 }

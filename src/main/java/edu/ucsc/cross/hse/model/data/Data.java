@@ -12,4 +12,7 @@ public interface Data
 	public <D> D getData(Class<D> data);
 
 	public <D> ArrayList<D> getDataSet(Class<D> data);
+
+	public Data copy();
+
 }
