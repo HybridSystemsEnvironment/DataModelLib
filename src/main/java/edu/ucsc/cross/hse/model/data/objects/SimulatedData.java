@@ -43,7 +43,7 @@ public class SimulatedData implements Data
 	public Object getId()
 	{
 		// TODO Auto-generated method stub
-		return null;
+		return id;
 	}
 
 	@Override
