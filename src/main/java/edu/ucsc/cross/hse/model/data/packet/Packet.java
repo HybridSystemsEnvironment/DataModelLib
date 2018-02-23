@@ -16,4 +16,6 @@ public interface Packet
 	public Double getDeliveryTime();
 
 	public PacketStatus getStatus();
+
+	public void updateStatus(PacketStatus new_status);
 }

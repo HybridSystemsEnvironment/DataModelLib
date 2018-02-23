@@ -1,6 +1,6 @@
 package edu.ucsc.cross.hse.model.data.packet;
 
-import edu.ucsc.cross.hse.core.modelling.DataStructure;
+import edu.ucsc.cross.hse.core.modeling.DataStructure;
 import edu.ucsc.cross.hse.model.data.Data;
 
 public class BasicPacket extends DataStructure implements Packet
@@ -57,6 +57,13 @@ public class BasicPacket extends DataStructure implements Packet
 	{
 		// TODO Auto-generated method stub
 		return status;
+	}
+
+	@Override
+	public void updateStatus(PacketStatus new_status)
+	{
+		// TODO Auto-generated method stub
+		status = new_status;
 	}
 
 }
